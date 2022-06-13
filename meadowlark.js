@@ -1,10 +1,5 @@
-let strings = [
-    "Победи свои страхи, или они победят тебя.",
-    "Рекам нужны истоки.",
-    "Не бойся неведомого.",
-    "Тебя ждет приятный сюрприз.",
-    "Будь проще везде, где только можно.",
-];
+
+let fortStrings = require('./library/FortStrings.js')
 
 let express = require('express');
 
@@ -24,9 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    let randomString =
-    strings[Math.floor(Math.random() * strings.length)];
-    res.render('about', { strings: randomString });
+    res.render('about', { fortStrings: fortStrings.getFortStrings });
 });
     
 app.use((req, res, ) => {
